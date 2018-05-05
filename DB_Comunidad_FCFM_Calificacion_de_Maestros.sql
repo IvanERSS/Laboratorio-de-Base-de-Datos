@@ -1,3 +1,5 @@
+
+
 /*
 		Nombre:		Ivan Emiliano Rodriguez Salazar
 		Matricula:	1666705
@@ -10,6 +12,12 @@
 
 
 USE [Comunidad_FCFM_By_Ivan]
+GO
+EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPaneCount' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_PromeidoTotal_Maestro'
+
+GO
+EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPane1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_PromeidoTotal_Maestro'
+
 GO
 EXEC sys.sp_dropextendedproperty @name=N'MS_DiagramPaneCount' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_Materias'
 
@@ -55,75 +63,75 @@ ALTER TABLE [dbo].[Calificacion] DROP CONSTRAINT [FK_Calificacion_Rel_Materia_Ma
 GO
 ALTER TABLE [dbo].[Calificacion] DROP CONSTRAINT [DF__Calificac__fecha__3552E9B6]
 GO
-/****** Object:  View [dbo].[VIEW_Materias]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Materias]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_Materias]
 GO
-/****** Object:  View [dbo].[VIEW_Maestro_Materias]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Maestro_Materias]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_Maestro_Materias]
 GO
-/****** Object:  View [dbo].[VIEW_TotalDeMaestrosPorCarrera]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_TotalDeMaestrosPorCarrera]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_TotalDeMaestrosPorCarrera]
 GO
-/****** Object:  View [dbo].[VIEW_Maestros]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Maestros]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_Maestros]
 GO
-/****** Object:  View [dbo].[VIEW_PromeidoTotal_Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_PromeidoTotal_Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_PromeidoTotal_Maestro]
 GO
-/****** Object:  View [dbo].[VIEW_AllComentarios]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_AllComentarios]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_AllComentarios]
 GO
-/****** Object:  View [dbo].[VIEW_Calificaciones]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Calificaciones]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_Calificaciones]
 GO
-/****** Object:  View [dbo].[VIEW_Clases]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Clases]    Script Date: 05/05/2018 18:55:45 ******/
 DROP VIEW [dbo].[VIEW_Clases]
 GO
-/****** Object:  Table [dbo].[Rel_Materia_Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Rel_Materia_Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 DROP TABLE [dbo].[Rel_Materia_Maestro]
 GO
-/****** Object:  Table [dbo].[Materia]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Materia]    Script Date: 05/05/2018 18:55:45 ******/
 DROP TABLE [dbo].[Materia]
 GO
-/****** Object:  Table [dbo].[Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 DROP TABLE [dbo].[Maestro]
 GO
-/****** Object:  Table [dbo].[Carrera]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Carrera]    Script Date: 05/05/2018 18:55:45 ******/
 DROP TABLE [dbo].[Carrera]
 GO
-/****** Object:  Table [dbo].[Calificacion]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Calificacion]    Script Date: 05/05/2018 18:55:45 ******/
 DROP TABLE [dbo].[Calificacion]
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_PromDeDosCalificaciones]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_PromDeDosCalificaciones]    Script Date: 05/05/2018 18:55:45 ******/
 DROP FUNCTION [dbo].[FN_PromDeDosCalificaciones]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BuscarMateria]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BuscarMateria]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_BuscarMateria]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BuscarMaestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BuscarMaestro]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_BuscarMaestro]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BuscarEnComentarios]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BuscarEnComentarios]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_BuscarEnComentarios]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Materia]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Materia]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_Add_Materia]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_Add_Maestro]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Clase]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Clase]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_Add_Clase]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Carrera]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Carrera]    Script Date: 05/05/2018 18:55:45 ******/
 DROP PROCEDURE [dbo].[SP_Add_Carrera]
 GO
 USE [master]
 GO
-/****** Object:  Database [Comunidad_FCFM_By_Ivan]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Database [Comunidad_FCFM_By_Ivan]    Script Date: 05/05/2018 18:55:45 ******/
 DROP DATABASE [Comunidad_FCFM_By_Ivan]
 GO
-/****** Object:  Database [Comunidad_FCFM_By_Ivan]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Database [Comunidad_FCFM_By_Ivan]    Script Date: 05/05/2018 18:55:45 ******/
 CREATE DATABASE [Comunidad_FCFM_By_Ivan]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -198,7 +206,7 @@ ALTER DATABASE [Comunidad_FCFM_By_Ivan] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 USE [Comunidad_FCFM_By_Ivan]
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Carrera]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Carrera]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -210,7 +218,7 @@ AS
 	VALUES
 		(@Carrera)
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Clase]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Clase]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -222,7 +230,7 @@ AS
 
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -235,7 +243,7 @@ AS
 		(@Maestro,@idCarrera)
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_Add_Materia]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_Add_Materia]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -248,7 +256,7 @@ AS
 		(@Materia,@idCarrera)
 
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BuscarEnComentarios]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BuscarEnComentarios]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -262,7 +270,7 @@ AS
 	WHERE
 		VIEW_Calificaciones.Comentario LIKE '%'+@Busqueda+'%'
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BuscarMaestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BuscarMaestro]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -276,7 +284,7 @@ AS
 	WHERE
 		VIEW_Maestros.Maestro LIKE '%'+@Busqueda+'%'
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BuscarMateria]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BuscarMateria]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -290,7 +298,7 @@ AS
 	WHERE
 		VIEW_Materias.Materia LIKE '%'+@Busqueda+'%'
 GO
-/****** Object:  UserDefinedFunction [dbo].[FN_PromDeDosCalificaciones]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  UserDefinedFunction [dbo].[FN_PromDeDosCalificaciones]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -306,7 +314,7 @@ AS
 		return @x
 	END
 GO
-/****** Object:  Table [dbo].[Calificacion]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Calificacion]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -324,7 +332,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Carrera]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Carrera]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -343,7 +351,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -359,7 +367,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Materia]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Materia]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -379,7 +387,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Rel_Materia_Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  Table [dbo].[Rel_Materia_Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -395,7 +403,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  View [dbo].[VIEW_Clases]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Clases]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -410,7 +418,7 @@ FROM   dbo.Maestro INNER JOIN
              dbo.Carrera ON dbo.Carrera.idCarrera = dbo.Materia.idCarrera AND dbo.Materia.idCarrera = dbo.Carrera.idCarrera AND dbo.Materia.idCarrera = dbo.Carrera.idCarrera
 
 GO
-/****** Object:  View [dbo].[VIEW_Calificaciones]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Calificaciones]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -424,7 +432,7 @@ FROM   dbo.VIEW_Clases INNER JOIN
 
 
 GO
-/****** Object:  View [dbo].[VIEW_AllComentarios]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_AllComentarios]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -438,25 +446,23 @@ FROM
 WHERE
 	VIEW_Calificaciones.Comentario IS NOT NULL
 GO
-/****** Object:  View [dbo].[VIEW_PromeidoTotal_Maestro]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_PromeidoTotal_Maestro]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+/*,
+VIEW_Clases.materia,
+VIEW_Clases.carrera*/
 CREATE VIEW [dbo].[VIEW_PromeidoTotal_Maestro]
 AS
-	SELECT
-		VIEW_Clases.maestro as Maestro, AVG(Calificacion.calificacion) as Promedio--, VIEW_Clases.materia as Materia, VIEW_Clases.carrera as Carrera
-	FROM
-		VIEW_Clases
-		JOIN Calificacion ON
-		VIEW_Clases.[ID Clase] = Calificacion.idClase
-	GROUP BY 
-		VIEW_Clases.maestro--,
-		--VIEW_Clases.materia,
-		--VIEW_Clases.carrera
+SELECT dbo.VIEW_Clases.Maestro, AVG(dbo.Calificacion.calificacion) AS Promedio
+FROM   dbo.VIEW_Clases INNER JOIN
+             dbo.Calificacion ON dbo.VIEW_Clases.ID_Clase = dbo.Calificacion.idClase
+GROUP BY dbo.VIEW_Clases.Maestro
+
 GO
-/****** Object:  View [dbo].[VIEW_Maestros]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Maestros]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -468,7 +474,7 @@ FROM   dbo.Maestro INNER JOIN
              dbo.Carrera ON dbo.Maestro.idCarrera = dbo.Carrera.idCarrera
 
 GO
-/****** Object:  View [dbo].[VIEW_TotalDeMaestrosPorCarrera]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_TotalDeMaestrosPorCarrera]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -485,7 +491,7 @@ GROUP BY
 	VIEW_Maestros.Carrera
 
 GO
-/****** Object:  View [dbo].[VIEW_Maestro_Materias]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Maestro_Materias]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -499,7 +505,7 @@ FROM   dbo.Maestro INNER JOIN
              dbo.Carrera ON dbo.Carrera.idCarrera = dbo.Materia.idCarrera AND dbo.Materia.idCarrera = dbo.Carrera.idCarrera
 
 GO
-/****** Object:  View [dbo].[VIEW_Materias]    Script Date: 05/05/2018 13:38:29 ******/
+/****** Object:  View [dbo].[VIEW_Materias]    Script Date: 05/05/2018 18:55:45 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1509,6 +1515,127 @@ End
 ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_Materias'
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_Materias'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[22] 4[39] 2[20] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1 [50] 2 [25] 3))"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2 [66] 3))"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[56] 4[18] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1 [75] 4))"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[66] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2))"
+      End
+      ActivePaneConfig = 0
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = 0
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "VIEW_Clases"
+            Begin Extent = 
+               Top = 9
+               Left = 57
+               Bottom = 206
+               Right = 355
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Calificacion"
+            Begin Extent = 
+               Top = 207
+               Left = 57
+               Bottom = 404
+               Right = 355
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 12
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_PromeidoTotal_Maestro'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'VIEW_PromeidoTotal_Maestro'
 GO
 USE [master]
 GO
